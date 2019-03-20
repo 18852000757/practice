@@ -52,6 +52,8 @@ while True:
                 print("%s\t%s\t%s\t%s"%(temp['name'], temp['qq'], temp['weixin'], temp['addr']))
                 find_flag=1#表示找到了
                 break
+                
+        #之所以用find_flag = 0 是因为在for循环当中嵌套if...else 的话会经常出错
         
         #判断是否找到了
         if find_flag == 0:
@@ -64,6 +66,22 @@ while True:
         break
     else:
         print("输入有误,请重新输入")
+        
+        
+补充：字典的增删改查 
+增：infor("key")=vel
+删：del infor("key")
+改：infor("已存在的key") = 新的vel
+查：infor.get("key")
 
-
-    print("")
+列表的增删改查：
+列表.append("元素") 添加到最后
+列表.insert(0,"元素")  #插入到某个位置
+列表1.extend(列表2)  #将两个列表合并
+删除：列表.pop() #删除最后一个
+列表.remove("元素") #删除特定某个元素
+#字符串的下标和切片在列表中同样适用 del 列表[下标]
+改：列表[下标] = new vel
+查：if "元素" in 列表：
+            ......
+ 
