@@ -1,0 +1,25 @@
+for temp in nums:
+    print(temp)
+    break
+else:
+    print("=========") # break直接跳出else
+  
+card_infors = [{"name":"laowang","age":18},{"name":"laoli", "age":19},{"name":"laozhao","age":20}]
+find_name = input("请输入要查询的名字：")
+for temp in card_infors:
+    if temp['name']==find_name:
+        print("找到了．．．．．")
+        break
+else:
+    #只要for循环的过程中没有执行到break，那么就会执行else里面的代码
+    print("没有找到....")
+    
+a = [11,22,33]
+b = [44,55]
+a.extend(b)
+#a.append(b)  #[11, 22, 33, [44, 55]]
+print(a)
+#结果 [11, 22, 33, 44, 55]  
+
+
+
