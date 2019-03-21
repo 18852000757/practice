@@ -144,3 +144,21 @@ def main():
 
 #调用主函数
 main()
+
+nums = [11,22,33]
+infor = {"name":"laowang"}
+
+def test():
+    #for num in nums:
+    #    print(num)
+
+    nums.append(44)
+    infor['age'] = 18
+
+def test2():
+    print(nums)
+    print(infor)
+
+test()
+test2()
+列表、字典使用时可以直接修改的，不用加global
