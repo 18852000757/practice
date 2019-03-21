@@ -1,0 +1,40 @@
+函数不定长参数：
+def sum_2_nums(a,b,*args):
+    print("-"*30)
+    print(a)
+    print(b)
+    print(args)
+
+    result = a+b
+    for num in args:
+        result+=num
+    print("result=%d"%result)
+
+sum_2_nums(11,22,33,44,55,66,77)
+sum_2_nums(11,22,33)
+sum_2_nums(11,22)
+#sum_2_nums(11)#错误,因为 形参中 至少要2个实参
+
+def test(a,b,c=33,*args,**kwargs):#在定义的时候 *,**用来表示后面的变量有特殊功能
+    print(a)
+    print(b)
+    print(c)
+    print(args)
+    print(kwargs)
+
+#test(11,22,33,44,55,66,77,task=99,done=89)
+
+A = (44,55,66)
+B = {"name":"laowang","age":18}
+
+test(11,22,33,*A,**B)#在实参中*,**表示对元组/字典进行拆包
+
+递归：
+def getNums(num):
+    if num>1:
+        return num * getNums(num-1)
+    else:
+        return num
+
+result = getNums(4)
+print(result)
