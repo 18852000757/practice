@@ -49,3 +49,25 @@ test2 = lambda a,b:a+b
 result2 = test2(11,22)
 
 print("result1=%d,result2=%d"%(result1,result2))
+匿名函数的应用：
+infors = [{"name":"laowang","age":10},{"name":"xiaoming","age":20},{"name":"banzhang","age":10}]
+infors.sort(key=lambda x:x['age'])
+print(infors)
+#[列表].sort() 将列表的元素按从小到大的顺序排 [列表].sort(reverse=True) 从大到小    [列表].sort(reverse) 倒序
+
+
+python2 中和 python3中的区别：
+#coding=utf-8
+def test(a,b,func):
+    result = func(a,b)
+    return result
+#python2中的方式
+#func_new = input("请输入一个匿名函数:")
+
+#python3中的方式
+func_new = input("请输入一个匿名函数:")
+func_new = eval(func_new)  #python3中默认输入是字符串..用eval转换成表达式
+
+num = test(11,22,func_new)
+print(num)
+
