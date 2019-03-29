@@ -9,6 +9,30 @@ def test(num):
     num = num+num#===>[100] + [100] ====>[100,100]   注意只要是num=xxx一定是num指向了一个新的地方
     print(num)
 
+
+文件操作：
 test(a)
 print(a)
 
+#1.获取用户要复制的文件名
+old_file_name = input("请输入要复制的文件名:")
+
+#2.打开想要复制的文件
+old_file = open(old_file_name,"r")
+
+#new_file_name = "[复件]" + old_file_name
+#test.py  -----> test[复件].py
+position = old_file_name.rfind(".")   #从右向左找"."的位置
+new_file_name = old_file_name[0:position] + "[复件]" + old_file_name[position:]
+
+#3.新建一个文件
+#new_file = open("xiaofan.py","w")
+new_file = open(new_file_name,"w")
+
+#4.从旧文件中读取数据，并且写入到新的文件中
+content = old_file.read()
+new_file.write(content)
+
+#5.关闭两个文件
+old_file.close()
+new_file.close()
