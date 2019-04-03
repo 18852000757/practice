@@ -34,8 +34,7 @@ class Bed:
     def get_name(self):
         return self.name
 
-fangzi = Home(129, "三室一厅", "北京市 朝阳区 长安街 666号")
-print(fangzi)
+fangzi = Home(129, "三室一厅", "北京市 朝阳区 长安街 666号"print(fangzi)
 
 
 bed1 = Bed("席梦思", 4)
@@ -69,7 +68,6 @@ class B(A):
         self.__test2()
         print(self.__num2)  #不能被调用
 
-
 b = B()
 #b.test1()
 #b.__test2() #私有方法并不会被继承
@@ -80,7 +78,29 @@ b.test4()
 #如果调用的是继承的父类中的公有方法，可以在这个公有方法中访问父类中的私有属性。
 #如果在子类中实现了一个公有方法，那么这个方法是不能够调用继承的父类中的私有方法和私有属性的。
 
+多继承注意点：
+class Base(object):
+    def test(self):
+        print("----Base")
 
+class A(Base):
+    def test(self):
+        print("-----A")
+
+class B(Base):
+    def test(self):
+        print("-----B")
+
+class C(A,B):
+    pass
+    #def test(self):
+    #    print("-----C")
+
+
+c = C()
+c.test()
+
+print(C.__mro__)  #__mro__可以查看调用的优先级顺序。
 
 
 
